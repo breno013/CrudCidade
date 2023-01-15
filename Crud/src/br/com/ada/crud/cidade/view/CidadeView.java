@@ -27,12 +27,16 @@ public class CidadeView {
         String nome = scanner.nextLine();
         cidade.setNome(nome);
 
+        System.out.println("Informe o estado: ");
+        String estado = scanner.nextLine();
+        cidade.setEstado(estado);
+
         controller.cadastrar(cidade);
     }
 
     public void mostrarListaCidades() {
         List<Cidade> cidades = controller.listar();
-        System.out.printf("Cidade\n");
+        System.out.printf("Cidade\tEstado\n");
         for (int i = 0; i < cidades.size(); i++){
             System.out.print(i+1);
             mostrarListaCidades(cidades.get(i));
@@ -40,7 +44,7 @@ public class CidadeView {
     }
 
     public void mostrarListaCidades(Cidade cidade){
-        System.out.printf("\t%s\n", cidade.getNome());
+        System.out.printf("\t%s\t%s\n", cidade.getNome(), cidade.getEstado());
     }
 
     public void menu(){

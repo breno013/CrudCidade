@@ -6,6 +6,7 @@ public class Cidade {
 
     private UUID id;
     private String nome;
+    private String estado;
 
     public UUID getId() {
         return id;
@@ -23,4 +24,11 @@ public class Cidade {
         this.nome = nome;
     }
 
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado){
+        this.estado = estado;
+    }
 }
